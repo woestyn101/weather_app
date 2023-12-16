@@ -1,13 +1,28 @@
 body {
     text-align:center;
+    display: flex;
+    justify-content: center;
 }
 
 .main {
-
+  
     margin-top: 20px;
+    width: 50%;
 }
 
 input {
     margin-bottom: 10px;
 }
     
+.searchbox {
+    display: block;
+}
+
+.container {
+    background-color: dodgerblue;
+    display: inline-block;
+    width: 80%;
+    border-radius: 15px;
+
+}
+

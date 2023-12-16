@@ -12,7 +12,6 @@ var searchBtn = document.querySelector("#searchBtn");
 var searchCity = document.querySelector("#searchCity");
 var wConditon = document.querySelector("#w-condition");
 var wImage = document.querySelector(".weather-image");
-var errorMessage = document.querySelector("#err-message");
 
 // function defaultCity() {
 //     var city = "Cleveland";
@@ -43,18 +42,7 @@ function fetchWeather(city){
 
 
     fetch(url)
-       .then(function(response) {
-        console.log(response);
-        if (response.status == 404){
-          errorMessage.textContent = "Invalid City Name";
-        }
-        return response.json();
-       })
-        
-
-
-
-    //.then(response => response.json())
+    .then(response => response.json())
     .then (function(data) {
             console.log(data);
             console.log(data.name);
@@ -97,17 +85,6 @@ searchBtn.addEventListener("click", ()=> {
     fetchWeather(searchCity.value);
 })
 
-
-searchCity.addEventListener("keypress", keyEnter);
-
-function keyEnter(event){
-
-  if (event.key === "Enter"){
-    event.preventDefault();
-    searchBtn.click();
-  }
-
-}
 
   
 
